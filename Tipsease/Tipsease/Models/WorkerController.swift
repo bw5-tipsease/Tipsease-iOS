@@ -28,6 +28,8 @@ class WorkerController {
     var bearer: Bearer?
     private let baseURL = URL(string: "") // WILL CHANGE WHEN API IS DEPLOYED
     var workers: [Worker] = []
+    let currencyFormatter = NumberFormatter()
+    let dateFormatter = DateFormatter()
     
     func signUp(user: User, completion: @escaping (Error?) -> ()) {
         guard let baseURL = baseURL else { return }

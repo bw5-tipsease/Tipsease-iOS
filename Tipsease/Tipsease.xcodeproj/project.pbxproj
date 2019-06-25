@@ -29,6 +29,7 @@
 		A246303922C2886A0094172F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303822C2886A0094172F /* User.swift */; };
 		A246303B22C2888D0094172F /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303A22C2888D0094172F /* Bearer.swift */; };
 		A246303E22C28BF40094172F /* WorkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303D22C28BF40094172F /* WorkerController.swift */; };
+		A246304322C2B79A0094172F /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246304222C2B79A0094172F /* Transaction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		A246303822C2886A0094172F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A246303A22C2888D0094172F /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		A246303D22C28BF40094172F /* WorkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerController.swift; sourceTree = "<group>"; };
+		A246304222C2B79A0094172F /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				377E2AF622C1941A00D85371 /* Worker.swift */,
 				A246303822C2886A0094172F /* User.swift */,
 				A246303A22C2888D0094172F /* Bearer.swift */,
+				A246304222C2B79A0094172F /* Transaction.swift */,
 				A246303D22C28BF40094172F /* WorkerController.swift */,
 			);
 			path = Models;
@@ -224,6 +227,7 @@
 			files = (
 				377E2AC822C13C0600D85371 /* AppDelegate.swift in Sources */,
 				A246303922C2886A0094172F /* User.swift in Sources */,
+				A246304322C2B79A0094172F /* Transaction.swift in Sources */,
 				A246303B22C2888D0094172F /* Bearer.swift in Sources */,
 				377E2AFB22C196EA00D85371 /* WorkerTableViewCell.swift in Sources */,
 				377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */,
