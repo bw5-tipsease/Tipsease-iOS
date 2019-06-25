@@ -26,9 +26,9 @@
 		377E2AF722C1941A00D85371 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AF622C1941A00D85371 /* Worker.swift */; };
 		377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AF822C196AD00D85371 /* DashboardViewController.swift */; };
 		377E2AFB22C196EA00D85371 /* WorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */; };
-		377E2AFD22C1975300D85371 /* WorkerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AFC22C1975300D85371 /* WorkerTableView.swift */; };
 		A246303922C2886A0094172F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303822C2886A0094172F /* User.swift */; };
 		A246303B22C2888D0094172F /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303A22C2888D0094172F /* Bearer.swift */; };
+		A246303E22C28BF40094172F /* WorkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303D22C28BF40094172F /* WorkerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,9 +53,9 @@
 		377E2AF622C1941A00D85371 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		377E2AF822C196AD00D85371 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewCell.swift; sourceTree = "<group>"; };
-		377E2AFC22C1975300D85371 /* WorkerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableView.swift; sourceTree = "<group>"; };
 		A246303822C2886A0094172F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A246303A22C2888D0094172F /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		A246303D22C28BF40094172F /* WorkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,16 +88,12 @@
 		377E2AC622C13C0600D85371 /* Tipsease */ = {
 			isa = PBXGroup;
 			children = (
-				377E2AF622C1941A00D85371 /* Worker.swift */,
-				A246303822C2886A0094172F /* User.swift */,
-				A246303A22C2888D0094172F /* Bearer.swift */,
-				377E2ADB22C14C3A00D85371 /* Font */,
 				377E2AC722C13C0600D85371 /* AppDelegate.swift */,
-				377E2ACB22C13C0600D85371 /* Main.storyboard */,
-				377E2AFC22C1975300D85371 /* WorkerTableView.swift */,
-				377E2AF822C196AD00D85371 /* DashboardViewController.swift */,
-				377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */,
+				A246303C22C288F80094172F /* Models */,
+				A246303F22C29F900094172F /* View Controllers */,
+				377E2ADB22C14C3A00D85371 /* Font */,
 				377E2ACE22C13C0700D85371 /* Assets.xcassets */,
+				377E2ACB22C13C0600D85371 /* Main.storyboard */,
 				377E2AD022C13C0700D85371 /* LaunchScreen.storyboard */,
 				377E2AD322C13C0700D85371 /* Info.plist */,
 			);
@@ -121,6 +117,26 @@
 				377E2ADD22C14C8300D85371 /* Roboto-ThinItalic.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		A246303C22C288F80094172F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				377E2AF622C1941A00D85371 /* Worker.swift */,
+				A246303822C2886A0094172F /* User.swift */,
+				A246303A22C2888D0094172F /* Bearer.swift */,
+				A246303D22C28BF40094172F /* WorkerController.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A246303F22C29F900094172F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				377E2AF822C196AD00D85371 /* DashboardViewController.swift */,
+				377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,12 +223,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				377E2AC822C13C0600D85371 /* AppDelegate.swift in Sources */,
-				377E2AFD22C1975300D85371 /* WorkerTableView.swift in Sources */,
 				A246303922C2886A0094172F /* User.swift in Sources */,
 				A246303B22C2888D0094172F /* Bearer.swift in Sources */,
 				377E2AFB22C196EA00D85371 /* WorkerTableViewCell.swift in Sources */,
 				377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */,
 				377E2AF722C1941A00D85371 /* Worker.swift in Sources */,
+				A246303E22C28BF40094172F /* WorkerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
