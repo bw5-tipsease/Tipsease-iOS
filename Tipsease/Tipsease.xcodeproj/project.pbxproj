@@ -27,6 +27,8 @@
 		377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AF822C196AD00D85371 /* DashboardViewController.swift */; };
 		377E2AFB22C196EA00D85371 /* WorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */; };
 		377E2AFD22C1975300D85371 /* WorkerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AFC22C1975300D85371 /* WorkerTableView.swift */; };
+		A246303922C2886A0094172F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303822C2886A0094172F /* User.swift */; };
+		A246303B22C2888D0094172F /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A246303A22C2888D0094172F /* Bearer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		377E2AF822C196AD00D85371 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewCell.swift; sourceTree = "<group>"; };
 		377E2AFC22C1975300D85371 /* WorkerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableView.swift; sourceTree = "<group>"; };
+		A246303822C2886A0094172F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A246303A22C2888D0094172F /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				377E2AF622C1941A00D85371 /* Worker.swift */,
+				A246303822C2886A0094172F /* User.swift */,
+				A246303A22C2888D0094172F /* Bearer.swift */,
 				377E2ADB22C14C3A00D85371 /* Font */,
 				377E2AC722C13C0600D85371 /* AppDelegate.swift */,
 				377E2ACB22C13C0600D85371 /* Main.storyboard */,
@@ -202,6 +208,8 @@
 			files = (
 				377E2AC822C13C0600D85371 /* AppDelegate.swift in Sources */,
 				377E2AFD22C1975300D85371 /* WorkerTableView.swift in Sources */,
+				A246303922C2886A0094172F /* User.swift in Sources */,
+				A246303B22C2888D0094172F /* Bearer.swift in Sources */,
 				377E2AFB22C196EA00D85371 /* WorkerTableViewCell.swift in Sources */,
 				377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */,
 				377E2AF722C1941A00D85371 /* Worker.swift in Sources */,
