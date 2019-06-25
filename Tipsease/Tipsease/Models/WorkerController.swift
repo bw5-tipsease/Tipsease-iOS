@@ -15,12 +15,23 @@ enum HTTPMethod: String {
     case delete = "DELETE"
 }
 
+enum NetworkError: Error {
+    case noAuth
+    case badAuth
+    case otherError
+    case badData
+    case noDecode
+    case noEncode
+}
+
 class WorkerController {
     var bearer: Bearer?
     private let baseURL = URL(string: "") // WILL CHANGE WHEN API IS DEPLOYED
+    var workers: [Worker] = []
     
     func signUp(user: User, completion: @escaping (Error?) -> ()) {
-        guard let signUpURL = baseURL?.appendingPathComponent("/users/signup") else { return } // WILL CHANGE WHEN API IS DEPLOYED
+        guard let baseURL = baseURL else { return }
+        let signUpURL = baseURL.appendingPathComponent("/users/signup") // WILL CHANGE WHEN API IS DEPLOYED
         
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -88,6 +99,44 @@ class WorkerController {
                 print("Error decoding and fetching bearer token: \(error)")
                 completion(error)
                 return
+            }
+        }.resume()
+    }
+    
+    func fetchAllWorkers(completion: @escaping (Result<[Worker], NetworkError>) -> ()) {
+        guard let bearer = bearer else {
+            completion(.failure(.noAuth))
+            return
+        }
+        guard let baseURL = baseURL else { return }
+        let workersURL = baseURL.appendingPathComponent("workers") // WILL CHANGE WHEN API IS DEPLOYED
+        var request = URLRequest(url: workersURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue("Bearer \(bearer)", forHTTPHeaderField: "Authorization") // SUBJECT TO CHANGE
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 401 {
+                completion(.failure(.badAuth))
+                return
+            }
+            
+            if let error = error {
+                print("Error returned in dataTask: \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.badData))
+                return
+            }
+            
+            do {
+                self.workers = try JSONDecoder().decode([Worker].self, from: data)
+                completion(.success(self.workers))
+            } catch {
+                completion(.failure(.noDecode))
             }
         }.resume()
     }
