@@ -30,6 +30,34 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="jLr-rb-Uyo">
+            <objects>
+                <tableViewController id="WZk-Ar-PeC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rIW-z1-hF3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1TU-Rc-M1Y">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1TU-Rc-M1Y" id="VXZ-pD-A8Z">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WZk-Ar-PeC" id="i4B-W1-fVy"/>
+                            <outlet property="delegate" destination="WZk-Ar-PeC" id="RYP-0F-8Yg"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0rt-Wv-i7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="889"/>
+        </scene>
         <!--Tipsease-->
         <scene sceneID="8Ab-Tm-DhZ">
             <objects>
@@ -753,7 +781,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="fEq-hL-Zec" kind="relationship" relationship="viewControllers" id="JAj-PG-NM2"/>
-                        <segue destination="CTN-hx-Lu8" kind="show" identifier="SearchControllerSegue" id="OYe-0m-WLM"/>
+                        <segue destination="WZk-Ar-PeC" kind="show" identifier="SearchControllerSegue" id="OYe-0m-WLM"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCg-AS-13r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -859,14 +887,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GNW-LM-qVd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1366.6666666666667" y="137.94642857142856"/>
-        </scene>
-        <!--AccountPage-->
-        <scene sceneID="yUc-my-yum">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AccountPage" id="CTN-hx-Lu8" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WIR-P6-EIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1041" y="889"/>
         </scene>
     </scenes>
     <resources>

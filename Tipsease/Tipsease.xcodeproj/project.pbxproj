@@ -34,6 +34,7 @@
 		378F789722C3DC5000151104 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789622C3DC5000151104 /* Bearer.swift */; };
 		378F789922C3DC7000151104 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789822C3DC7000151104 /* Transaction.swift */; };
 		378F789B22C3DC9700151104 /* WorkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789A22C3DC9700151104 /* WorkerController.swift */; };
+		A2116F1A22C3E1D800A9F0DC /* AccountPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2116F1822C3E1D800A9F0DC /* AccountPage.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		378F789622C3DC5000151104 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		378F789822C3DC7000151104 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		378F789A22C3DC9700151104 /* WorkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerController.swift; sourceTree = "<group>"; };
+		A2116F1922C3E1D800A9F0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tipsease/Views/Base.lproj/AccountPage.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			children = (
 				377E2ACB22C13C0600D85371 /* Main.storyboard */,
 				377E2AD022C13C0700D85371 /* LaunchScreen.storyboard */,
+				A2116F1822C3E1D800A9F0DC /* AccountPage.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				377E2AEA22C14C8400D85371 /* Roboto-BlackItalic.ttf in Resources */,
 				377E2AEB22C14C8400D85371 /* Roboto-LightItalic.ttf in Resources */,
 				377E2AD222C13C0700D85371 /* LaunchScreen.storyboard in Resources */,
+				A2116F1A22C3E1D800A9F0DC /* AccountPage.storyboard in Resources */,
 				377E2AF022C14C8400D85371 /* Roboto-BoldItalic.ttf in Resources */,
 				377E2AED22C14C8400D85371 /* Roboto-Black.ttf in Resources */,
 				377E2AE822C14C8400D85371 /* Roboto-Italic.ttf in Resources */,
@@ -285,6 +289,14 @@
 				377E2AD122C13C0700D85371 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A2116F1822C3E1D800A9F0DC /* AccountPage.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2116F1922C3E1D800A9F0DC /* Base */,
+			);
+			name = AccountPage.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
