@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Transaction: Codable { // ALL SUBJECT TO CHANGE FOR API
+struct Transaction {
 	var amount: Double
 	var date: Date
+	var location: Location
 }
