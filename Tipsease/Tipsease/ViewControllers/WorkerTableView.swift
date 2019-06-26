@@ -2,7 +2,7 @@
 //  WorkerTableView.swift
 //  Tipsease
 //
-//  Created by Marlon Raskin on 6/24/19.
+//  Created by Marlon Raskin on 6/25/19.
 //  Copyright © 2019 Marlon Raskin. All rights reserved.
 //
 
@@ -17,5 +17,7 @@ class WorkerTableView: UITableView {
         // Drawing code
     }
     */
+	
+
 
 }

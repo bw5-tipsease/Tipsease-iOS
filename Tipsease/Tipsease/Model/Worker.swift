@@ -7,20 +7,22 @@
 //
 
 import Foundation
+import UIKit
 
-
-struct Worker: Codable {
+struct Worker {
 	var name: String
 	var rating: String
 	var position: String
 	var location: String
+//	var image: UIImage
 }
 
-struct Location: Codable {
+struct Location {
 	let name: String
 	let address: String
 }
 
+// TODO: -- Fix Array
 
 class Workers {
 	var workersArray: [Worker] = [

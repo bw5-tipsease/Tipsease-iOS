@@ -15,7 +15,7 @@ class DashboardViewController: UIViewController {
 	
 	
 	let workers = Workers()
-	
+	var tipTextField: UITextField?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,35 @@ class DashboardViewController: UIViewController {
 }
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+	
+	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+		let tipAction = UITableViewRowAction(style: .normal, title: "Tip") { (action, indexPath) in
+			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.workers.workersArray[indexPath.row].name)?", message: nil, preferredStyle: .alert)
+			tipAlertController.addTextField(configurationHandler: { (tipTextField) in
+				tipTextField.placeholder = "Enter tip amount"
+				let tipActionButton = UIAlertAction(title: "Tip", style: .default, handler: { (tipUIAlertAction) in
+					//tip function goes here!
+				})
+				let tipCancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+				tipAlertController.addAction(tipActionButton)
+				tipAlertController.addAction(tipCancelButton)
+			})
+			self.present(tipAlertController, animated: true, completion: nil)
+			
+			print("Handle tip action here.")
+		}
+		tipAction.backgroundColor = Colors.primaryGreen
+		return [tipAction]
+	}
+	
+	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		<#code#>
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return workers.workersArray.count
 	}
