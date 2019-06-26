@@ -16,5 +16,7 @@ struct Worker {
 	var rating: String
 	var tips: [Transaction]
 	var tagline: String
-	var imageUrl: String
+	var image: UIImage
 }
+
+

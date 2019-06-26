@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 
 struct Location {
 	var name: String
 	var address: String
-	var imageUrl: String
+	var image: UIImage
 	var duration: Date
 }
