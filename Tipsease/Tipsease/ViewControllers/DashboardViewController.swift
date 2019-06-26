@@ -10,13 +10,16 @@ import UIKit
 
 class DashboardViewController: UIViewController {
 	
+	// MARK: - Properties and Outlets
+	
 	@IBOutlet var workerTableView: WorkerTableView!
 	@IBOutlet var viewForWorkerTableView: UIView!
 	
-	
-	
 	let workerController = WorkerController()
-	var tipTextField: UITextField?
+	var amountTypedString = ""
+	
+	
+	//MARK: - Lifecycle
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,34 +28,23 @@ class DashboardViewController: UIViewController {
 		workerTableView.dataSource = self
 		viewForWorkerTableView.layer.cornerRadius = 12
 		viewForWorkerTableView.layer.masksToBounds = true
-		
     }
-	
-	class SpecialAlertController: UIAlertController {
-		
-	}
-	
 
 	
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "WorkerDetailSegue" {
 			if let workerDetailVC = segue.destination as? WorkerDetailViewController,
 				let indexPath = workerTableView.indexPathForSelectedRow {
+					workerDetailVC.workerController = workerController
 					workerDetailVC.worker = workerController.workers[indexPath.row]
 			}
 		}
     }
 }
 
-class SpcialAlertController: UIAlertController {
-}
-
-//extension SpecialAlertController: UITextFieldDelegate {
-//	
-//}
+// MARK: - Extensions
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
@@ -61,39 +53,23 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	
-	var formattedText: NumberFormatter {
-		let numberFormatter = NumberFormatter()
-		numberFormatter.numberStyle = .currency
-		numberFormatter.usesGroupingSeparator = true
-		numberFormatter.locale = Locale.current
-		return numberFormatter
-	}
-	
-	
-	
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		let tipAction = UIContextualAction(style: .normal, title: "Tip") { (ac: UIContextualAction, UIView, success) in
+			self.amountTypedString = ""
 			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.workerController.workers[indexPath.row].name)?", message: nil, preferredStyle: .alert)
 			tipAlertController.addTextField(configurationHandler: { (tipTextField) in
+				tipTextField.delegate = self
 				tipTextField.placeholder = "Enter tip amount"
 				tipTextField.keyboardType = .numberPad
-				tipTextField.clearButtonMode = .whileEditing
-				tipTextField.text = self.formattedText.string(for: tipTextField.text)
-//				if tipTextField.isEditing {
-//					self.formattedText.string(for: tipTextField.text)
-//				}
-				
-				
-//				tipTextField.isEditing = NumberFormatter
 				let tipCancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
 				let tipActionButton = UIAlertAction(title: "Tip", style: .default, handler: { (tipUIAlertAction) in
-					//tip function goes here
-					
-				
-//					func tipFieldDidChange(_ sender: UITextField) {
-//						guard var userInput = sender.text else { return }
-//						sender.text = formattedText(with: userInput)
-//					}
+					guard let tipFromTextField = tipTextField.text else { return }
+					let secondAlert = UIAlertController(title: "Are you sure \(String(describing: tipFromTextField)) is the correct amount that you want to tip?", message: "", preferredStyle: .alert)
+					let secondAlertNoAction = UIAlertAction(title: "No", style: .destructive, handler: nil)
+					let secondAlertYesAction = UIAlertAction(title: "Yes", style: .default, handler: nil)
+					secondAlert.addAction(secondAlertYesAction)
+					secondAlert.addAction(secondAlertNoAction)
+					self.present(secondAlert, animated: true, completion: nil)
 					
 				})
 				tipAlertController.addAction(tipCancelButton)
@@ -118,5 +94,32 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.ratingLabel.text = workerController.workers[indexPath.row].rating
 		cell.accessoryType = .disclosureIndicator
 		return cell
+	}
+}
+
+
+extension DashboardViewController: UITextFieldDelegate {
+	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+		let formatter = NumberFormatter()
+		formatter.locale = Locale.current
+		formatter.minimumFractionDigits = 2
+		formatter.maximumFractionDigits = 2
+		
+		if string.count > 0 {
+			amountTypedString += string
+			let decNumber = NSDecimalNumber(string: amountTypedString).multiplying(by: 0.01)
+			let newString = "$" + formatter.string(from: decNumber)!
+			textField.text = newString
+		} else {
+			amountTypedString = String(amountTypedString.dropLast())
+			if amountTypedString.count > 0 {
+				let decNumber = NSDecimalNumber(string: amountTypedString).multiplying(by: 0.01)
+				let newString = "$" +  formatter.string(from: decNumber)!
+				textField.text = newString
+			} else {
+				textField.text = "$0.00"
+			}
+		}
+		return false
 	}
 }
