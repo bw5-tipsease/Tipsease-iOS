@@ -14,7 +14,8 @@ class DashboardViewController: UIViewController {
 	@IBOutlet var viewForWorkerTableView: UIView!
 	
 	
-	let workers = Workers()
+	
+	let workerController = WorkerController()
 	var tipTextField: UITextField?
 	
     override func viewDidLoad() {
@@ -40,7 +41,7 @@ class DashboardViewController: UIViewController {
 		if segue.identifier == "WorkerDetailSegue" {
 			if let workerDetailVC = segue.destination as? WorkerDetailViewController,
 				let indexPath = workerTableView.indexPathForSelectedRow {
-					workerDetailVC.worker = workers.workersArray[indexPath.row]
+					workerDetailVC.worker = workerController.workers[indexPath.row]
 			}
 		}
     }
@@ -72,7 +73,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		let tipAction = UIContextualAction(style: .normal, title: "Tip") { (ac: UIContextualAction, UIView, success) in
-			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.workers.workersArray[indexPath.row].name)?", message: nil, preferredStyle: .alert)
+			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.workerController.workers[indexPath.row].name)?", message: nil, preferredStyle: .alert)
 			tipAlertController.addTextField(configurationHandler: { (tipTextField) in
 				tipTextField.placeholder = "Enter tip amount"
 				tipTextField.keyboardType = .numberPad
@@ -108,15 +109,13 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return workers.workersArray.count
+		return workerController.workers.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
-		cell.workerNameLabel.text = workers.workersArray[indexPath.row].name
-		cell.ratingLabel.text = workers.workersArray[indexPath.row].rating
-		cell.positionLabel.text = workers.workersArray[indexPath.row].position
-		cell.imagePlaceholder.image = workers.workersArray[indexPath.row].image
+		cell.workerNameLabel.text = workerController.workers[indexPath.row].name
+		cell.ratingLabel.text = workerController.workers[indexPath.row].rating
 		cell.accessoryType = .disclosureIndicator
 		return cell
 	}
