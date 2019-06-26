@@ -27,20 +27,31 @@ class DashboardViewController: UIViewController {
 		
     }
 	
-	
+	class SpecialAlertController: UIAlertController {
+		
+	}
 	
 
-    /*
+	
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+		if segue.identifier == "WorkerDetailSegue" {
+			if let workerDetailVC = segue.destination as? WorkerDetailViewController,
+				let indexPath = workerTableView.indexPathForSelectedRow {
+					workerDetailVC.worker = workers.workersArray[indexPath.row]
+			}
+		}
     }
-    */
-	
 }
+
+class SpcialAlertController: UIAlertController {
+}
+
+//extension SpecialAlertController: UITextFieldDelegate {
+//	
+//}
 
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
@@ -48,29 +59,53 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 		return true
 	}
 	
-	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-		let tipAction = UITableViewRowAction(style: .normal, title: "Tip") { (action, indexPath) in
+	
+	var formattedText: NumberFormatter {
+		let numberFormatter = NumberFormatter()
+		numberFormatter.numberStyle = .currency
+		numberFormatter.usesGroupingSeparator = true
+		numberFormatter.locale = Locale.current
+		return numberFormatter
+	}
+	
+	
+	
+	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+		let tipAction = UIContextualAction(style: .normal, title: "Tip") { (ac: UIContextualAction, UIView, success) in
 			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.workers.workersArray[indexPath.row].name)?", message: nil, preferredStyle: .alert)
 			tipAlertController.addTextField(configurationHandler: { (tipTextField) in
 				tipTextField.placeholder = "Enter tip amount"
-				let tipActionButton = UIAlertAction(title: "Tip", style: .default, handler: { (tipUIAlertAction) in
-					//tip function goes here!
-				})
+				tipTextField.keyboardType = .numberPad
+				tipTextField.clearButtonMode = .whileEditing
+				tipTextField.text = self.formattedText.string(for: tipTextField.text)
+//				if tipTextField.isEditing {
+//					self.formattedText.string(for: tipTextField.text)
+//				}
+				
+				
+//				tipTextField.isEditing = NumberFormatter
 				let tipCancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-				tipAlertController.addAction(tipActionButton)
+				let tipActionButton = UIAlertAction(title: "Tip", style: .default, handler: { (tipUIAlertAction) in
+					//tip function goes here
+					
+				
+//					func tipFieldDidChange(_ sender: UITextField) {
+//						guard var userInput = sender.text else { return }
+//						sender.text = formattedText(with: userInput)
+//					}
+					
+				})
 				tipAlertController.addAction(tipCancelButton)
+				tipAlertController.addAction(tipActionButton)
+				self.present(tipAlertController, animated: true, completion: nil)
 			})
-			self.present(tipAlertController, animated: true, completion: nil)
-			
-			print("Handle tip action here.")
+			success(true)
 		}
+		tipAction.image = UIImage(named: "money96")
 		tipAction.backgroundColor = Colors.primaryGreen
-		return [tipAction]
+		return UISwipeActionsConfiguration(actions: [tipAction])
 	}
 	
-	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-		<#code#>
-	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return workers.workersArray.count
@@ -81,8 +116,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 		cell.workerNameLabel.text = workers.workersArray[indexPath.row].name
 		cell.ratingLabel.text = workers.workersArray[indexPath.row].rating
 		cell.positionLabel.text = workers.workersArray[indexPath.row].position
+		cell.imagePlaceholder.image = workers.workersArray[indexPath.row].image
 		cell.accessoryType = .disclosureIndicator
 		return cell
 	}
 }
-

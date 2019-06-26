@@ -13,6 +13,7 @@ class WorkerTableViewCell: UITableViewCell {
 	@IBOutlet var workerNameLabel: UILabel!
 	@IBOutlet var positionLabel: UILabel!
 	@IBOutlet var ratingLabel: UILabel!
+	@IBOutlet var imagePlaceholder: UIImageView!
 	
 	
 	

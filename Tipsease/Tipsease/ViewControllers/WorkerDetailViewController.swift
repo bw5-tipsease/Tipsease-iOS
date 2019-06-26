@@ -10,6 +10,8 @@ import UIKit
 
 class WorkerDetailViewController: UIViewController {
 
+	var worker: Worker?
+	
 	@IBOutlet var workerProfileImage: UIImageView!
 	@IBOutlet var leaveTipButton: UIButton!
 	@IBOutlet var locationAndDurationLabel: UILabel!
@@ -32,7 +34,9 @@ class WorkerDetailViewController: UIViewController {
 		tipAmountOneLabel.textColor = Colors.primaryGreen
 		tipAmountTwoLabel.textColor = Colors.primaryGreen
 		tipAmountThreeLabel.textColor = Colors.primaryGreen
-		
+		workerProfileImage.image = worker?.image
+		self.title = worker?.name
+		locationAndDurationLabel.text = "\(worker!.location) - 4 months"
     }
     
 	@IBAction func leaveTipButtonTapped(_ sender: UIButton) {
