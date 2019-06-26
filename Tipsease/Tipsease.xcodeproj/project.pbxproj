@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		377E2AC822C13C0600D85371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AC722C13C0600D85371 /* AppDelegate.swift */; };
+		377E2ACD22C13C0600D85371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ACB22C13C0600D85371 /* Main.storyboard */; };
+		377E2ACF22C13C0700D85371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ACE22C13C0700D85371 /* Assets.xcassets */; };
+		377E2AD222C13C0700D85371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AD022C13C0700D85371 /* LaunchScreen.storyboard */; };
+		377E2AE822C14C8400D85371 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ADC22C14C8300D85371 /* Roboto-Italic.ttf */; };
+		377E2AE922C14C8400D85371 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ADD22C14C8300D85371 /* Roboto-ThinItalic.ttf */; };
+		377E2AEA22C14C8400D85371 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ADE22C14C8300D85371 /* Roboto-BlackItalic.ttf */; };
+		377E2AEB22C14C8400D85371 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ADF22C14C8300D85371 /* Roboto-LightItalic.ttf */; };
+		377E2AEC22C14C8400D85371 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE022C14C8300D85371 /* Roboto-Medium.ttf */; };
+		377E2AED22C14C8400D85371 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE122C14C8300D85371 /* Roboto-Black.ttf */; };
+		377E2AEE22C14C8400D85371 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE222C14C8400D85371 /* Roboto-Light.ttf */; };
+		377E2AEF22C14C8400D85371 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE322C14C8400D85371 /* Roboto-MediumItalic.ttf */; };
+		377E2AF022C14C8400D85371 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE422C14C8400D85371 /* Roboto-BoldItalic.ttf */; };
+		377E2AF122C14C8400D85371 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE522C14C8400D85371 /* Roboto-Thin.ttf */; };
+		377E2AF222C14C8400D85371 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE622C14C8400D85371 /* Roboto-Bold.ttf */; };
+		377E2AF322C14C8400D85371 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 377E2AE722C14C8400D85371 /* Roboto-Regular.ttf */; };
+		377E2AF722C1941A00D85371 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AF622C1941A00D85371 /* Worker.swift */; };
+		377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AF822C196AD00D85371 /* DashboardViewController.swift */; };
+		377E2AFB22C196EA00D85371 /* WorkerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */; };
+		377E2AFD22C1975300D85371 /* WorkerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AFC22C1975300D85371 /* WorkerTableView.swift */; };
+		377E2B0122C27A7800D85371 /* UIMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2B0022C27A7800D85371 /* UIMaterial.swift */; };
+		377E2B0722C2812900D85371 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2B0622C2812900D85371 /* LoginViewController.swift */; };
+		377E2B0922C282A100D85371 /* WorkerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2B0822C282A100D85371 /* WorkerDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		377E2AC422C13C0600D85371 /* Tipsease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsease.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		377E2AC722C13C0600D85371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		377E2ACC22C13C0600D85371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		377E2ACE22C13C0700D85371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		377E2AD122C13C0700D85371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		377E2AD322C13C0700D85371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		377E2ADC22C14C8300D85371 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		377E2ADD22C14C8300D85371 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		377E2ADE22C14C8300D85371 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		377E2ADF22C14C8300D85371 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		377E2AE022C14C8300D85371 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		377E2AE122C14C8300D85371 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		377E2AE222C14C8400D85371 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		377E2AE322C14C8400D85371 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		377E2AE422C14C8400D85371 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		377E2AE522C14C8400D85371 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		377E2AE622C14C8400D85371 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		377E2AE722C14C8400D85371 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		377E2AF622C1941A00D85371 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
+		377E2AF822C196AD00D85371 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableViewCell.swift; sourceTree = "<group>"; };
+		377E2AFC22C1975300D85371 /* WorkerTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerTableView.swift; sourceTree = "<group>"; };
+		377E2B0022C27A7800D85371 /* UIMaterial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMaterial.swift; sourceTree = "<group>"; };
+		377E2B0622C2812900D85371 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		377E2B0822C282A100D85371 /* WorkerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		377E2AC122C13C0600D85371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		377E2ABB22C13C0600D85371 = {
+			isa = PBXGroup;
+			children = (
+				377E2AC622C13C0600D85371 /* Tipsease */,
+				377E2AC522C13C0600D85371 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		377E2AC522C13C0600D85371 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				377E2AC422C13C0600D85371 /* Tipsease.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		377E2AC622C13C0600D85371 /* Tipsease */ = {
+			isa = PBXGroup;
+			children = (
+				377E2AC722C13C0600D85371 /* AppDelegate.swift */,
+				377E2B0522C27AC600D85371 /* Views */,
+				377E2B0322C27A9900D85371 /* ViewControllers */,
+				377E2B0422C27AB000D85371 /* Model */,
+				377E2B0222C27A8000D85371 /* Resources */,
+				377E2ADB22C14C3A00D85371 /* Font */,
+				377E2ACE22C13C0700D85371 /* Assets.xcassets */,
+				377E2AD322C13C0700D85371 /* Info.plist */,
+			);
+			path = Tipsease;
+			sourceTree = "<group>";
+		};
+		377E2ADB22C14C3A00D85371 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				377E2AE122C14C8300D85371 /* Roboto-Black.ttf */,
+				377E2ADE22C14C8300D85371 /* Roboto-BlackItalic.ttf */,
+				377E2AE622C14C8400D85371 /* Roboto-Bold.ttf */,
+				377E2AE422C14C8400D85371 /* Roboto-BoldItalic.ttf */,
+				377E2ADC22C14C8300D85371 /* Roboto-Italic.ttf */,
+				377E2AE222C14C8400D85371 /* Roboto-Light.ttf */,
+				377E2ADF22C14C8300D85371 /* Roboto-LightItalic.ttf */,
+				377E2AE022C14C8300D85371 /* Roboto-Medium.ttf */,
+				377E2AE322C14C8400D85371 /* Roboto-MediumItalic.ttf */,
+				377E2AE722C14C8400D85371 /* Roboto-Regular.ttf */,
+				377E2AE522C14C8400D85371 /* Roboto-Thin.ttf */,
+				377E2ADD22C14C8300D85371 /* Roboto-ThinItalic.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		377E2B0222C27A8000D85371 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				377E2B0022C27A7800D85371 /* UIMaterial.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		377E2B0322C27A9900D85371 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				377E2B0822C282A100D85371 /* WorkerDetailViewController.swift */,
+				377E2AFC22C1975300D85371 /* WorkerTableView.swift */,
+				377E2AF822C196AD00D85371 /* DashboardViewController.swift */,
+				377E2B0622C2812900D85371 /* LoginViewController.swift */,
+				377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		377E2B0422C27AB000D85371 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				377E2AF622C1941A00D85371 /* Worker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		377E2B0522C27AC600D85371 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				377E2ACB22C13C0600D85371 /* Main.storyboard */,
+				377E2AD022C13C0700D85371 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		377E2AC322C13C0600D85371 /* Tipsease */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 377E2AD622C13C0700D85371 /* Build configuration list for PBXNativeTarget "Tipsease" */;
+			buildPhases = (
+				377E2AC022C13C0600D85371 /* Sources */,
+				377E2AC122C13C0600D85371 /* Frameworks */,
+				377E2AC222C13C0600D85371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tipsease;
+			productName = Tipsease;
+			productReference = 377E2AC422C13C0600D85371 /* Tipsease.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		377E2ABC22C13C0600D85371 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Marlon Raskin";
+				TargetAttributes = {
+					377E2AC322C13C0600D85371 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 377E2ABF22C13C0600D85371 /* Build configuration list for PBXProject "Tipsease" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 377E2ABB22C13C0600D85371;
+			productRefGroup = 377E2AC522C13C0600D85371 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				377E2AC322C13C0600D85371 /* Tipsease */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		377E2AC222C13C0600D85371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377E2AF222C14C8400D85371 /* Roboto-Bold.ttf in Resources */,
+				377E2AEC22C14C8400D85371 /* Roboto-Medium.ttf in Resources */,
+				377E2AE922C14C8400D85371 /* Roboto-ThinItalic.ttf in Resources */,
+				377E2AEE22C14C8400D85371 /* Roboto-Light.ttf in Resources */,
+				377E2AEA22C14C8400D85371 /* Roboto-BlackItalic.ttf in Resources */,
+				377E2AEB22C14C8400D85371 /* Roboto-LightItalic.ttf in Resources */,
+				377E2AD222C13C0700D85371 /* LaunchScreen.storyboard in Resources */,
+				377E2AF022C14C8400D85371 /* Roboto-BoldItalic.ttf in Resources */,
+				377E2AED22C14C8400D85371 /* Roboto-Black.ttf in Resources */,
+				377E2AE822C14C8400D85371 /* Roboto-Italic.ttf in Resources */,
+				377E2ACF22C13C0700D85371 /* Assets.xcassets in Resources */,
+				377E2AEF22C14C8400D85371 /* Roboto-MediumItalic.ttf in Resources */,
+				377E2AF322C14C8400D85371 /* Roboto-Regular.ttf in Resources */,
+				377E2AF122C14C8400D85371 /* Roboto-Thin.ttf in Resources */,
+				377E2ACD22C13C0600D85371 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		377E2AC022C13C0600D85371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				377E2B0722C2812900D85371 /* LoginViewController.swift in Sources */,
+				377E2AC822C13C0600D85371 /* AppDelegate.swift in Sources */,
+				377E2AFD22C1975300D85371 /* WorkerTableView.swift in Sources */,
+				377E2B0122C27A7800D85371 /* UIMaterial.swift in Sources */,
+				377E2AFB22C196EA00D85371 /* WorkerTableViewCell.swift in Sources */,
+				377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */,
+				377E2B0922C282A100D85371 /* WorkerDetailViewController.swift in Sources */,
+				377E2AF722C1941A00D85371 /* Worker.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		377E2ACB22C13C0600D85371 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				377E2ACC22C13C0600D85371 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		377E2AD022C13C0700D85371 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				377E2AD122C13C0700D85371 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		377E2AD422C13C0700D85371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		377E2AD522C13C0700D85371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		377E2AD722C13C0700D85371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6VB3396MT;
+				INFOPLIST_FILE = Tipsease/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Raskin.Tipsease";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		377E2AD822C13C0700D85371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6VB3396MT;
+				INFOPLIST_FILE = Tipsease/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Marlon-Raskin.Tipsease";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		377E2ABF22C13C0600D85371 /* Build configuration list for PBXProject "Tipsease" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377E2AD422C13C0700D85371 /* Debug */,
+				377E2AD522C13C0700D85371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		377E2AD622C13C0700D85371 /* Build configuration list for PBXNativeTarget "Tipsease" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				377E2AD722C13C0700D85371 /* Debug */,
+				377E2AD822C13C0700D85371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 377E2ABC22C13C0600D85371 /* Project object */;
+}
