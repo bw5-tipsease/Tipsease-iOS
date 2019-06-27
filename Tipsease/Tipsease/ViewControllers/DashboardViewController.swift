@@ -16,6 +16,7 @@ class DashboardViewController: UIViewController {
 	@IBOutlet var locationTableView: LocationTableView!
 	@IBOutlet var viewForWorkerTableView: UIView!
 	@IBOutlet var viewForLocationTableView: UIView!
+	@IBOutlet var viewForLocationTableView2: UIView!
 	
 	
 	
@@ -34,8 +35,8 @@ class DashboardViewController: UIViewController {
 		locationTableView.dataSource = self
 		viewForWorkerTableView.layer.cornerRadius = 12
 		viewForWorkerTableView.layer.masksToBounds = true
-		viewForLocationTableView.layer.cornerRadius = 12
-		viewForLocationTableView.layer.masksToBounds = true
+		viewForLocationTableView2.layer.cornerRadius = 12
+		viewForLocationTableView2.layer.masksToBounds = true
     }
 
 	

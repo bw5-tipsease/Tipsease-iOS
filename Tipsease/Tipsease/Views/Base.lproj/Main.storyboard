@@ -379,6 +379,7 @@
                     <connections>
                         <outlet property="locationTableView" destination="25D-eJ-jpp" id="cPZ-eF-wIz"/>
                         <outlet property="viewForLocationTableView" destination="Enm-VO-zWM" id="a5Y-6m-SfY"/>
+                        <outlet property="viewForLocationTableView2" destination="EYx-E2-Opn" id="Llf-Gg-4za"/>
                         <outlet property="viewForWorkerTableView" destination="KLi-Mp-qWX" id="mR4-Wq-iX8"/>
                         <outlet property="workerTableView" destination="FxW-6b-a4E" id="RLD-OY-Aml"/>
                     </connections>
