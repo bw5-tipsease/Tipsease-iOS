@@ -33,10 +33,11 @@
 		378F789522C3DC3200151104 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789422C3DC3200151104 /* User.swift */; };
 		378F789722C3DC5000151104 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789622C3DC5000151104 /* Bearer.swift */; };
 		378F789922C3DC7000151104 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789822C3DC7000151104 /* Transaction.swift */; };
-		378F789B22C3DC9700151104 /* WorkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789A22C3DC9700151104 /* WorkerController.swift */; };
+		378F789B22C3DC9700151104 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378F789A22C3DC9700151104 /* APIController.swift */; };
 		37F14D7222C42F5F0026BE96 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F14D7122C42F5F0026BE96 /* Tip.swift */; };
 		37F14D7422C42F7F0026BE96 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F14D7322C42F7F0026BE96 /* Location.swift */; };
 		A2116F1A22C3E1D800A9F0DC /* AccountPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2116F1822C3E1D800A9F0DC /* AccountPage.storyboard */; };
+		A2116F1C22C43D8900A9F0DC /* WorkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2116F1B22C43D8900A9F0DC /* WorkerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,10 +69,11 @@
 		378F789422C3DC3200151104 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		378F789622C3DC5000151104 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
 		378F789822C3DC7000151104 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		378F789A22C3DC9700151104 /* WorkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerController.swift; sourceTree = "<group>"; };
+		378F789A22C3DC9700151104 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		37F14D7122C42F5F0026BE96 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		37F14D7322C42F7F0026BE96 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		A2116F1922C3E1D800A9F0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tipsease/Views/Base.lproj/AccountPage.storyboard; sourceTree = "<group>"; };
+		A2116F1B22C43D8900A9F0DC /* WorkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +130,9 @@
 				377E2ADF22C14C8300D85371 /* Roboto-LightItalic.ttf */,
 				377E2AE022C14C8300D85371 /* Roboto-Medium.ttf */,
 				377E2AE322C14C8400D85371 /* Roboto-MediumItalic.ttf */,
+				377E2ADD22C14C8300D85371 /* Roboto-ThinItalic.ttf */,
 				377E2AE722C14C8400D85371 /* Roboto-Regular.ttf */,
 				377E2AE522C14C8400D85371 /* Roboto-Thin.ttf */,
-				377E2ADD22C14C8300D85371 /* Roboto-ThinItalic.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -147,8 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				377E2B0822C282A100D85371 /* WorkerDetailViewController.swift */,
-				377E2AFC22C1975300D85371 /* WorkerTableView.swift */,
 				377E2AF822C196AD00D85371 /* DashboardViewController.swift */,
+				377E2AFC22C1975300D85371 /* WorkerTableView.swift */,
 				377E2B0622C2812900D85371 /* LoginViewController.swift */,
 				377E2AFA22C196EA00D85371 /* WorkerTableViewCell.swift */,
 			);
@@ -164,7 +166,8 @@
 				378F789422C3DC3200151104 /* User.swift */,
 				37F14D7122C42F5F0026BE96 /* Tip.swift */,
 				378F789622C3DC5000151104 /* Bearer.swift */,
-				378F789A22C3DC9700151104 /* WorkerController.swift */,
+				378F789A22C3DC9700151104 /* APIController.swift */,
+				A2116F1B22C43D8900A9F0DC /* WorkerController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,7 +269,7 @@
 				378F789922C3DC7000151104 /* Transaction.swift in Sources */,
 				378F789722C3DC5000151104 /* Bearer.swift in Sources */,
 				377E2B0722C2812900D85371 /* LoginViewController.swift in Sources */,
-				378F789B22C3DC9700151104 /* WorkerController.swift in Sources */,
+				378F789B22C3DC9700151104 /* APIController.swift in Sources */,
 				377E2AC822C13C0600D85371 /* AppDelegate.swift in Sources */,
 				377E2AFD22C1975300D85371 /* WorkerTableView.swift in Sources */,
 				37F14D7422C42F7F0026BE96 /* Location.swift in Sources */,
@@ -275,6 +278,7 @@
 				378F789522C3DC3200151104 /* User.swift in Sources */,
 				377E2AF922C196AD00D85371 /* DashboardViewController.swift in Sources */,
 				37F14D7222C42F5F0026BE96 /* Tip.swift in Sources */,
+				A2116F1C22C43D8900A9F0DC /* WorkerController.swift in Sources */,
 				377E2B0922C282A100D85371 /* WorkerDetailViewController.swift in Sources */,
 				377E2AF722C1941A00D85371 /* Worker.swift in Sources */,
 			);

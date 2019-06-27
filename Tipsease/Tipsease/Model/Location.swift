@@ -14,5 +14,5 @@ struct Location {
 	var name: String
 	var address: String
 	var image: UIImage
-	var duration: Date
+	var duration: Int?
 }
