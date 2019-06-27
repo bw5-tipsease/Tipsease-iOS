@@ -9,7 +9,7 @@
 import Foundation
 
 struct User {
-	var tips: [Tip]
+	var tips: [Tip?]
 	var name: String
 }
 
