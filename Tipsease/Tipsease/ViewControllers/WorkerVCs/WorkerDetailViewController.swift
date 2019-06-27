@@ -30,7 +30,7 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet var tipAmountThreeLabel: UILabel!
 	@IBOutlet var taglineTextView: UITextView!
 	
-	
+	let layerGradient = CALayerGra
 	
 	
 	override func viewDidLoad() {
@@ -52,6 +52,11 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 			
 		}
 		
+		layerGradient.colors = [Colors.secondaryBlue.cgColor, Colors.deeperBlue.cgColor]
+		layerGradient.startPoint = CGPoint(x: 0, y: 0.5)
+		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
+		layerGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+		tabBarController?.tabBar.layer.addSublayer(layerGradient)
 		
     }
     

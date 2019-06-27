@@ -18,6 +18,7 @@ class DashboardViewController: UIViewController {
 	@IBOutlet var viewForLocationTableView: UIView!
 	@IBOutlet var viewForLocationTableView2: UIView!
 	
+	let layerGradient = CAGradientLayer()
 	
 	
 	let workerController = WorkerController()
@@ -37,6 +38,11 @@ class DashboardViewController: UIViewController {
 		viewForWorkerTableView.layer.masksToBounds = true
 		viewForLocationTableView2.layer.cornerRadius = 12
 		viewForLocationTableView2.layer.masksToBounds = true
+		layerGradient.colors = [Colors.secondaryBlue.cgColor, Colors.deeperBlue.cgColor]
+		layerGradient.startPoint = CGPoint(x: 0, y: 0.5)
+		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
+		layerGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+		tabBarController?.tabBar.layer.addSublayer(layerGradient)
     }
 
 	
