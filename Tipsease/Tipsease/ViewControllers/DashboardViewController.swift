@@ -15,6 +15,9 @@ class DashboardViewController: UIViewController {
 	@IBOutlet var workerTableView: WorkerTableView!
 	@IBOutlet var locationTableView: LocationTableView!
 	@IBOutlet var viewForWorkerTableView: UIView!
+	@IBOutlet var viewForLocationTableView: UIView!
+	
+	
 	
 	let workerController = WorkerController()
 	var amountTypedString = ""
@@ -31,6 +34,8 @@ class DashboardViewController: UIViewController {
 		locationTableView.dataSource = self
 		viewForWorkerTableView.layer.cornerRadius = 12
 		viewForWorkerTableView.layer.masksToBounds = true
+		viewForLocationTableView.layer.cornerRadius = 12
+		viewForLocationTableView.layer.masksToBounds = true
     }
 
 	
