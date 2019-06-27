@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkerDetailViewController: UIViewController {
+class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 
 	var workerController: WorkerController?
 	var worker: Worker?
@@ -54,8 +54,6 @@ class WorkerDetailViewController: UIViewController {
 		
 		
     }
-	
-	
     
 	@IBAction func leaveTipButtonTapped(_ sender: UIButton) {
 		triggerAlert()
@@ -71,14 +69,12 @@ class WorkerDetailViewController: UIViewController {
     }
     */
 	
-	
-	
 	func triggerAlert() {
 		self.amountTypedString2 = ""
 		guard let workerObject = worker else { return }
 		let tipAlertController = UIAlertController(title: "How much would you like to tip \(workerObject.name)?", message: nil, preferredStyle: .alert)
 		tipAlertController.addTextField(configurationHandler: { (tipTextField) in
-//			tipTextField.delegate = self
+			tipTextField.delegate = self
 			tipTextField.placeholder = "Enter tip amount"
 			tipTextField.keyboardType = .numberPad
 			let tipCancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -121,6 +117,7 @@ class WorkerDetailViewController: UIViewController {
 		}
 		return false
 	}
+	
 
 }
 

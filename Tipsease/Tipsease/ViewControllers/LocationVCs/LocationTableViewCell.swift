@@ -10,7 +10,13 @@ import UIKit
 
 class LocationTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
+	@IBOutlet var locationImage: UIImageView!
+	@IBOutlet var locationNameLabel: UILabel!
+	@IBOutlet var addressLabel: UILabel!
+	
+	
+	
+	override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }

@@ -13,6 +13,7 @@ class DashboardViewController: UIViewController {
 	// MARK: - Properties and Outlets
 	
 	@IBOutlet var workerTableView: WorkerTableView!
+	@IBOutlet var locationTableView: LocationTableView!
 	@IBOutlet var viewForWorkerTableView: UIView!
 	
 	let workerController = WorkerController()
@@ -26,6 +27,8 @@ class DashboardViewController: UIViewController {
 		loadViewIfNeeded()
         workerTableView.delegate = self
 		workerTableView.dataSource = self
+		locationTableView.delegate = self
+		locationTableView.dataSource = self
 		viewForWorkerTableView.layer.cornerRadius = 12
 		viewForWorkerTableView.layer.masksToBounds = true
     }
@@ -85,16 +88,33 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return workerController.workers.count
+		if tableView == workerTableView {
+			return workerController.workers.count
+		} else if tableView == locationTableView {
+			return workerController.places.count
+		} else {
+			return 0
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
-		cell.workerNameLabel.text = workerController.workers[indexPath.row].name
-		cell.ratingLabel.text = workerController.workers[indexPath.row].rating
-		cell.accessoryType = .disclosureIndicator
-		return cell
-	}
+		if tableView == workerTableView {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
+			cell.imagePlaceholder.image = workerController.workers[indexPath.row].image
+			cell.workerNameLabel.text = workerController.workers[indexPath.row].name
+			cell.ratingLabel.text = "Rating: \(workerController.workers[indexPath.row].rating)"
+			cell.accessoryType = .disclosureIndicator
+			return cell
+		} else if tableView == locationTableView {
+			guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? LocationTableViewCell else { return UITableViewCell() }
+			cell.locationImage.image = workerController.places[indexPath.row].image
+			cell.locationNameLabel.text = workerController.places[indexPath.row].name
+			cell.addressLabel.text = workerController.places[indexPath.row].address
+			return cell
+		} else {
+			return UITableViewCell()
+		}
+	} 
 }
 
 
@@ -123,3 +143,6 @@ extension DashboardViewController: UITextFieldDelegate {
 		return false
 	}
 }
+
+
+
