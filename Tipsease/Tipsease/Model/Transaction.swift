@@ -9,7 +9,7 @@
 import Foundation
 
 struct Transaction {
-	var amount: Double
-	var date: Date
-	var location: Location
+	var amount: Double?
+	var date: Date?
+	var location: Location?
 }
