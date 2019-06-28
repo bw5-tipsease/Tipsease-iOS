@@ -18,7 +18,7 @@ class LocationTableViewCell: UITableViewCell {
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        locationImage.layer.cornerRadius = 12
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
