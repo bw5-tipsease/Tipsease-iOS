@@ -21,7 +21,8 @@ class DashboardViewController: UIViewController {
 	let layerGradient = CAGradientLayer()
 	
 	
-	let workerController = WorkerController()
+//	let workerController = WorkerController()
+	let apiController = APIController()
 	var amountTypedString = ""
 	
 	
@@ -43,17 +44,31 @@ class DashboardViewController: UIViewController {
 		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
 		layerGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
 		tabBarController?.tabBar.layer.addSublayer(layerGradient)
+//		apiController.fetchAllServers { (Result<[Worker], NetworkError>) in
+//			
+//		}
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		if apiController.bearer == nil {
+			performSegue(withIdentifier: "LoginSegue", sender: self)
+		}
+	}
 
 	
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "WorkerDetailSegue" {
-			if let workerDetailVC = segue.destination as? WorkerDetailViewController,
-				let indexPath = workerTableView.indexPathForSelectedRow {
-					workerDetailVC.workerController = workerController
-					workerDetailVC.worker = workerController.workers[indexPath.row]
+		if segue.identifier == "LoginSegue" {
+			if let loginVC = segue.destination as? LoginViewController {
+				loginVC.apiController = apiController
+			} else if segue.identifier == "WorkerDetailSegue" {
+				if let workerDetailVC = segue.destination as? WorkerDetailViewController,
+					let indexPath = workerTableView.indexPathForSelectedRow {
+					workerDetailVC.apiController = apiController
+					workerDetailVC.server = apiController.servers[indexPath.row]
+				}
 			}
 		}
     }
@@ -71,7 +86,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		let tipAction = UIContextualAction(style: .normal, title: "Tip") { (ac: UIContextualAction, UIView, success) in
 			self.amountTypedString = ""
-			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.workerController.workers[indexPath.row].name)?", message: nil, preferredStyle: .alert)
+			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.apiController.servers[indexPath.row].name)?", message: nil, preferredStyle: .alert)
 			tipAlertController.addTextField(configurationHandler: { (tipTextField) in
 				tipTextField.delegate = self
 				tipTextField.placeholder = "Enter tip amount"
@@ -101,9 +116,9 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if tableView == workerTableView {
-			return workerController.workers.count
+			return apiController.servers.count
 		} else if tableView == locationTableView {
-			return workerController.places.count
+			return apiController.servers.count
 		} else {
 			return 0
 		}
@@ -112,16 +127,16 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if tableView == workerTableView {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
-			cell.imagePlaceholder.image = workerController.workers[indexPath.row].image
-			cell.workerNameLabel.text = workerController.workers[indexPath.row].name
-			cell.ratingLabel.text = "Rating: \(workerController.workers[indexPath.row].rating)"
+//			cell.imagePlaceholder.image = apiController.servers[indexPath.row].image
+			cell.workerNameLabel.text = apiController.servers[indexPath.row].name
+			cell.ratingLabel.text = "Rating: \(apiController.servers[indexPath.row].rating)"
 			cell.accessoryType = .disclosureIndicator
 			return cell
 		} else if tableView == locationTableView {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? LocationTableViewCell else { return UITableViewCell() }
-			cell.locationImage.image = workerController.places[indexPath.row].image
-			cell.locationNameLabel.text = workerController.places[indexPath.row].name
-			cell.addressLabel.text = workerController.places[indexPath.row].address
+//			cell.locationImage.image = apiController[indexPath.row].image
+			cell.locationNameLabel.text = apiController.servers[indexPath.row].name
+//			cell.addressLabel.text = apiController.locations[indexPath.row].address //LOCATION GOES HERE
 			return cell
 		} else {
 			return UITableViewCell()

@@ -9,7 +9,8 @@
 import Foundation
 
 struct User: Codable {
-	var tips: [Tip?]
 	var name: String
+	var email: String
+	var password: String
 }
 

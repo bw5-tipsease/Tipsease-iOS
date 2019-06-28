@@ -10,8 +10,9 @@ import UIKit
 
 class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 
-	var workerController: WorkerController?
-	var worker: Worker?
+//	var workerController: WorkerController?
+	var apiController: APIController?
+	var server: Worker?
 	var amountTypedString2 = ""
 	
 	
@@ -40,15 +41,15 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 		tipAmountOneLabel.textColor = Colors.primaryGreen
 		tipAmountTwoLabel.textColor = Colors.primaryGreen
 		tipAmountThreeLabel.textColor = Colors.primaryGreen
-		self.title = worker?.name
-		workerProfileImage.image = worker?.image
+		self.title = server?.name
+//		workerProfileImage.image = worker?.image
 		locationAndDurationLabel.text = "\(locationStr.joined(separator: ", "))"
-		if let workerObject = worker {
-			taglineTextView.text = "\"\(workerObject.tagline)\""
-			for location in workerObject.locations {
-				locationStr.append(location.name)
-			}
-		}
+//		if let workerObject = worker {
+//			taglineTextView.text = "\"\(workerObject.tagline)\""
+//			for location in workerObject.locations {
+//				locationStr.append(location.name)
+//			}
+//		}
 		
 		//TODO: - Gradient Button
 //		layerGradient.colors = [Colors.secondaryBlue.cgColor, Colors.deeperBlue.cgColor]
@@ -75,7 +76,7 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 	
 	func triggerAlert() {
 		self.amountTypedString2 = ""
-		guard let workerObject = worker else { return }
+		guard let workerObject = server else { return }
 		let tipAlertController = UIAlertController(title: "How much would you like to tip \(workerObject.name)?", message: nil, preferredStyle: .alert)
 		tipAlertController.addTextField(configurationHandler: { (tipTextField) in
 			tipTextField.delegate = self

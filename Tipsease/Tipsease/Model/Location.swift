@@ -12,7 +12,16 @@ import UIKit
 
 struct Location: Codable {
 	var name: String
-	var address: String
-	var image: UIImage
-	var duration: Int?
+	var location: String
+	var imageUrl: String
+	var id: Int
+	var description: String
+	
+	enum CodingKeys: String, CodingKey {
+		case name
+		case location
+		case imageUrl = "image_url"
+		case id
+		case description
+	}
 }
