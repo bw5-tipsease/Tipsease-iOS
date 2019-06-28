@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Tip {
+struct Tip: Codable {
 	var amount: Double
 	var location: Location
 }
