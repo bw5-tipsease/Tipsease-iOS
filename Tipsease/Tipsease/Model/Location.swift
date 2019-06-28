@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-struct Location {
+struct Location: Codable {
 	var name: String
 	var address: String
 	var image: UIImage

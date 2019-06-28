@@ -8,8 +8,16 @@
 
 import Foundation
 
-struct Transaction {
-	var amount: Double?
-	var date: Date?
-	var location: Location?
+struct Transaction:Codable {
+    var id: Int
+    var tipperId: Int
+	var serverId: Int
+    var tipPaid: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case tipperId = "tipper_id"
+        case serverId = "server_id"
+        case tipPaid = "tip_paid"
+    }
 }

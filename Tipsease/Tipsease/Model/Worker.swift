@@ -10,13 +10,24 @@ import Foundation
 import UIKit
 
 
-struct Worker {
+struct Worker: Codable {
+    var id: Int
 	var name: String
-	var locations: [Location]
-	var rating: String
-	var tips: [Transaction]
+	var location: Int
+	var rating: Int
+	var transactions: [Transaction]
 	var tagline: String
-	var image: UIImage
+	var imageUrl: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case rating
+        case imageUrl = "thumbnail_url"
+        case location = "restaurant_id"
+        case transactions
+        case tagline
+    }
 }
 
 
