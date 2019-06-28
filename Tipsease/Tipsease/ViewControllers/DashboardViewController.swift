@@ -19,7 +19,11 @@ class DashboardViewController: UIViewController {
 	@IBOutlet var viewForLocationTableView2: UIView!
 	
 	let layerGradient = CAGradientLayer()
-	
+	private var serverNames: [Worker] = [] {
+		didSet {
+			workerTableView.reloadData()
+		}
+	}
 	
 //	let workerController = WorkerController()
 	let apiController = APIController()
@@ -27,6 +31,11 @@ class DashboardViewController: UIViewController {
 	
 	
 	//MARK: - Lifecycle
+	
+	override func viewWillAppear(_ animated: Bool) {
+
+		workerTableView.reloadData()
+	}
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +53,13 @@ class DashboardViewController: UIViewController {
 		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
 		layerGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
 		tabBarController?.tabBar.layer.addSublayer(layerGradient)
-//		apiController.fetchAllServers { (Result<[Worker], NetworkError>) in
-//			
-//		}
+		apiController.fetchAllServers { (result) in
+			if let names = try? result.get() {
+				DispatchQueue.main.async {
+					self.serverNames = names
+				}
+			}
+		}
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -116,7 +129,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if tableView == workerTableView {
-			return apiController.servers.count
+			return serverNames.count
 		} else if tableView == locationTableView {
 			return apiController.servers.count
 		} else {
@@ -128,8 +141,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 		if tableView == workerTableView {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
 //			cell.imagePlaceholder.image = apiController.servers[indexPath.row].image
-			cell.workerNameLabel.text = apiController.servers[indexPath.row].name
-			cell.ratingLabel.text = "Rating: \(apiController.servers[indexPath.row].rating)"
+			cell.workerNameLabel.text = serverNames[indexPath.row].name
+			cell.ratingLabel.text = "Rating: \(serverNames[indexPath.row].rating)"
 			cell.accessoryType = .disclosureIndicator
 			return cell
 		} else if tableView == locationTableView {
