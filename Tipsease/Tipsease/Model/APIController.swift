@@ -51,7 +51,7 @@ class APIController {
 
         URLSession.shared.dataTask(with: request) { _, response, error in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode != 201 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
@@ -83,7 +83,7 @@ class APIController {
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
+                response.statusCode != 201 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
             }
 
@@ -104,7 +104,8 @@ class APIController {
                 completion(error)
                 return
             }
-            }.resume()
+			completion(nil)
+		}.resume()
     }
 
     func fetchAllServers(completion: @escaping (Result<[Worker], NetworkError>) -> ()) {
@@ -142,6 +143,6 @@ class APIController {
             } catch {
                 completion(.failure(.noDecode))
             }
-            }.resume()
+		}.resume()
     }
 }
