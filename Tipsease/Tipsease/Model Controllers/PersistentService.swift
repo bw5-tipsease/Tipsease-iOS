@@ -19,17 +19,17 @@ class PersistentService {
 	let defaults = UserDefaults.standard
 	
 	// MARK: - Saving user token function
-	func saveUserToken(token: String) {
-		defaults.set(token, forKey: Keys.userToken)
-		print(token)
+	func saveUserToken(token: Bearer) {
+		let data = try? PropertyListEncoder().encode(token)
+		defaults.set(data, forKey: Keys.userToken)
 	}
 	
 	
 	// MARK: - Loading user token function
-	func checkForUserToken(bearerToken: String) {
-		let userToken = defaults.value(forKey: Keys.userToken) as? String ?? nil
-		guard let existingUserToken = userToken else { return }
-		bearerToken.token = existingUserToken
+	func checkForUserToken() -> Bearer? {
+		guard let data = defaults.data(forKey: Keys.userToken) else { return nil }
+		let token = try? PropertyListDecoder().decode(Bearer.self, from: data)
+		return token
 	}
 }
 

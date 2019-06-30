@@ -25,7 +25,7 @@ class DashboardViewController: UIViewController {
 		}
 	}
 	
-	let persistence = PersistentService()
+	
 	let apiController = APIController()
 	var amountTypedString = ""
 	
@@ -34,7 +34,7 @@ class DashboardViewController: UIViewController {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		apiController.fetchAllServers { (result) in
-			print(result)
+//			print(result)
 			if let names = try? result.get() {
 				DispatchQueue.main.async {
 					self.apiController.servers = names
@@ -78,7 +78,6 @@ class DashboardViewController: UIViewController {
 		if segue.identifier == "LoginSegue" {
 			if let loginVC = segue.destination as? LoginViewController {
 				loginVC.apiController = apiController
-				loginVC.persistence = persistence
 			}
 		} else if segue.identifier == "WorkerDetailSegue" {
 			if let workerDetailVC = segue.destination as? WorkerDetailViewController,
