@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
 	
 	var apiController: APIController?
 	var loginType = LoginType.register
+	var persistence: PersistentService?
 	
 	
 	override func viewDidLoad() {
@@ -64,8 +65,6 @@ class LoginViewController: UIViewController {
 								self.loginButton.setTitle("Sign In", for: .normal)
 							})
 						}
-						guard let bearer = apiController.bearer else { return }
-						print(bearer.token)
 					}
 				}
 			} else if loginType == .login {
@@ -74,6 +73,8 @@ class LoginViewController: UIViewController {
 						print("Error occurred during sign in: \(error)")
 					} else {
 						DispatchQueue.main.async {
+							guard let bearer = apiController.bearer else { return }
+							self.persistence.saveUserToken(token: bearer.token)
 							self.dismiss(animated: true, completion: nil)
 						}
 					}

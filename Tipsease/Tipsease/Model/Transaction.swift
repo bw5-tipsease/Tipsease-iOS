@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Transaction:Codable {
+struct Transaction: Codable {
     var id: Int
     var tipperId: Int
 	var serverId: Int

@@ -25,7 +25,7 @@ class DashboardViewController: UIViewController {
 		}
 	}
 	
-//	let workerController = WorkerController()
+	let persistence = PersistentService()
 	let apiController = APIController()
 	var amountTypedString = ""
 	
@@ -33,8 +33,15 @@ class DashboardViewController: UIViewController {
 	//MARK: - Lifecycle
 	
 	override func viewWillAppear(_ animated: Bool) {
-
-		workerTableView.reloadData()
+		apiController.fetchAllServers { (result) in
+			print(result)
+			if let names = try? result.get() {
+				DispatchQueue.main.async {
+					self.apiController.servers = names
+					self.workerTableView.reloadData()
+				}
+			}
+		}
 	}
 	
     override func viewDidLoad() {
@@ -53,17 +60,12 @@ class DashboardViewController: UIViewController {
 		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
 		layerGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
 		tabBarController?.tabBar.layer.addSublayer(layerGradient)
-		apiController.fetchAllServers { (result) in
-			if let names = try? result.get() {
-				DispatchQueue.main.async {
-					self.serverNames = names
-				}
-			}
-		}
+		
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
+		
 		if apiController.bearer == nil {
 			performSegue(withIdentifier: "LoginSegue", sender: self)
 		}
@@ -76,12 +78,13 @@ class DashboardViewController: UIViewController {
 		if segue.identifier == "LoginSegue" {
 			if let loginVC = segue.destination as? LoginViewController {
 				loginVC.apiController = apiController
-			} else if segue.identifier == "WorkerDetailSegue" {
-				if let workerDetailVC = segue.destination as? WorkerDetailViewController,
-					let indexPath = workerTableView.indexPathForSelectedRow {
-					workerDetailVC.apiController = apiController
-					workerDetailVC.server = apiController.servers[indexPath.row]
-				}
+				loginVC.persistence = persistence
+			}
+		} else if segue.identifier == "WorkerDetailSegue" {
+			if let workerDetailVC = segue.destination as? WorkerDetailViewController,
+				let indexPath = workerTableView.indexPathForSelectedRow {
+				workerDetailVC.apiController = apiController
+				workerDetailVC.server = apiController.servers[indexPath.row]
 			}
 		}
     }
@@ -129,7 +132,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if tableView == workerTableView {
-			return serverNames.count
+			return apiController.servers.count
 		} else if tableView == locationTableView {
 			return apiController.servers.count
 		} else {
@@ -141,8 +144,8 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 		if tableView == workerTableView {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
 //			cell.imagePlaceholder.image = apiController.servers[indexPath.row].image
-			cell.workerNameLabel.text = serverNames[indexPath.row].name
-			cell.ratingLabel.text = "Rating: \(serverNames[indexPath.row].rating)"
+			cell.workerNameLabel.text = apiController.servers[indexPath.row].name
+			cell.ratingLabel.text = "Rating: \(apiController.servers[indexPath.row].rating)"
 			cell.accessoryType = .disclosureIndicator
 			return cell
 		} else if tableView == locationTableView {

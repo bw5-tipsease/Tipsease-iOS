@@ -26,6 +26,9 @@ enum NetworkError: Error {
 
 
 class APIController {
+	
+	//MARK: - Properties
+	
 	var bearer: Bearer?
 	private let baseURL = URL(string: "https://tipsease-be.herokuapp.com/api")
 	let currencyFormatter = NumberFormatter()
@@ -33,6 +36,8 @@ class APIController {
     var servers: [Worker] = []
     
 
+	// MARK: - Register & Sign Encode & Decode functions
+	
     func register(user: User, completion: @escaping (Error?) -> ()) {
         guard let baseURL = baseURL else { return }
         let registerURL = baseURL.appendingPathComponent("auth/register")
@@ -108,6 +113,8 @@ class APIController {
 		}.resume()
     }
 
+	// MARK: - Fetch Data Function
+	
     func fetchAllServers(completion: @escaping (Result<[Worker], NetworkError>) -> ()) {
         guard let bearer = bearer else {
             completion(.failure(.noAuth))
@@ -145,4 +152,7 @@ class APIController {
             }
 		}.resume()
     }
+	
+	// MARK: - Fetch Image URLs function
+	
 }
