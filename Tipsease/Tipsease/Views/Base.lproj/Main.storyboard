@@ -709,7 +709,7 @@
                         <outlet property="locationOneLabel" destination="AdX-yh-ohy" id="su5-CT-VsB"/>
                         <outlet property="locationThreeLabel" destination="nPS-8W-K2b" id="Bro-bx-9o6"/>
                         <outlet property="locationTwoLabel" destination="ZaV-Rq-6hF" id="RGr-1v-hR6"/>
-                        <outlet property="taglineTextView" destination="OPs-0x-eDO" id="au9-ZI-Ysr"/>
+                        <outlet property="taglineTextView" destination="OPs-0x-eDO" id="7lp-xH-SUl"/>
                         <outlet property="tipAmountOneLabel" destination="gtg-39-yMN" id="ZJG-uv-zqd"/>
                         <outlet property="tipAmountThreeLabel" destination="gpr-5d-XNN" id="78H-sR-QeD"/>
                         <outlet property="tipAmountTwoLabel" destination="Ebp-Xi-Eqn" id="WPd-au-LPI"/>

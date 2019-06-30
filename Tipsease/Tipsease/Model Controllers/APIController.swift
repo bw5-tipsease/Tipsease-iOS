@@ -26,13 +26,23 @@ enum NetworkError: Error {
 
 
 class APIController {
+	
+	//MARK: - Properties
+	
 	var bearer: Bearer?
+	let persistence = PersistentService()
 	private let baseURL = URL(string: "https://tipsease-be.herokuapp.com/api")
 	let currencyFormatter = NumberFormatter()
 	let dateFormatter = DateFormatter()
     var servers: [Worker] = []
+	
+	init() {
+		setBearer()
+	}
     
 
+	// MARK: - Register & Sign Encode & Decode functions
+	
     func register(user: User, completion: @escaping (Error?) -> ()) {
         guard let baseURL = baseURL else { return }
         let registerURL = baseURL.appendingPathComponent("auth/register")
@@ -47,6 +57,7 @@ class APIController {
         } catch {
             print("Error encoding user data: \(error)")
             completion(error)
+			return
         }
 
         URLSession.shared.dataTask(with: request) { _, response, error in
@@ -108,6 +119,8 @@ class APIController {
 		}.resume()
     }
 
+	// MARK: - Fetch Data Function
+	
     func fetchAllServers(completion: @escaping (Result<[Worker], NetworkError>) -> ()) {
         guard let bearer = bearer else {
             completion(.failure(.noAuth))
@@ -145,4 +158,16 @@ class APIController {
             }
 		}.resume()
     }
+	
+	// MARK: - Fetch Image URLs function
+	
+	
+	func saveBearer() {
+		guard let bearerToken = bearer else { return }
+		persistence.saveUserToken(token: bearerToken)
+	}
+	
+	func setBearer() {
+		bearer = persistence.checkForUserToken()
+	}
 }

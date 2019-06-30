@@ -64,8 +64,6 @@ class LoginViewController: UIViewController {
 								self.loginButton.setTitle("Sign In", for: .normal)
 							})
 						}
-						guard let bearer = apiController.bearer else { return }
-						print(bearer.token)
 					}
 				}
 			} else if loginType == .login {
@@ -74,6 +72,8 @@ class LoginViewController: UIViewController {
 						print("Error occurred during sign in: \(error)")
 					} else {
 						DispatchQueue.main.async {
+							guard apiController.bearer != nil else { return }
+							apiController.saveBearer()
 							self.dismiss(animated: true, completion: nil)
 						}
 					}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3711602622C7002100DA5E9C /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3711602522C7002100DA5E9C /* PersistentService.swift */; };
 		377E2AC822C13C0600D85371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E2AC722C13C0600D85371 /* AppDelegate.swift */; };
 		377E2ACD22C13C0600D85371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ACB22C13C0600D85371 /* Main.storyboard */; };
 		377E2ACF22C13C0700D85371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 377E2ACE22C13C0700D85371 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3711602522C7002100DA5E9C /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
 		377E2AC422C13C0600D85371 /* Tipsease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		377E2AC722C13C0600D85371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		377E2ACC22C13C0600D85371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,6 +93,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3711602722C700E300DA5E9C /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				378F789A22C3DC9700151104 /* APIController.swift */,
+				A2116F1B22C43D8900A9F0DC /* WorkerController.swift */,
+				3711602522C7002100DA5E9C /* PersistentService.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		377E2ABB22C13C0600D85371 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 				377E2AC722C13C0600D85371 /* AppDelegate.swift */,
 				377E2B0522C27AC600D85371 /* Views */,
 				377E2B0322C27A9900D85371 /* ViewControllers */,
+				3711602722C700E300DA5E9C /* Model Controllers */,
 				377E2B0422C27AB000D85371 /* Model */,
 				377E2B0222C27A8000D85371 /* Resources */,
 				377E2ADB22C14C3A00D85371 /* Font */,
@@ -169,8 +182,6 @@
 				378F789422C3DC3200151104 /* User.swift */,
 				37F14D7122C42F5F0026BE96 /* Tip.swift */,
 				378F789622C3DC5000151104 /* Bearer.swift */,
-				378F789A22C3DC9700151104 /* APIController.swift */,
-				A2116F1B22C43D8900A9F0DC /* WorkerController.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3711602622C7002100DA5E9C /* PersistentService.swift in Sources */,
 				378F789922C3DC7000151104 /* Transaction.swift in Sources */,
 				378F789722C3DC5000151104 /* Bearer.swift in Sources */,
 				37F14D7622C533540026BE96 /* LocationTableViewCell.swift in Sources */,

@@ -12,7 +12,13 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 
 //	var workerController: WorkerController?
 	var apiController: APIController?
-	var server: Worker?
+	
+	var server: Worker? {
+		didSet {
+			loadViewIfNeeded()
+			updateViews()
+		}
+	}
 	var amountTypedString2 = ""
 	
 	
@@ -36,14 +42,13 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		var locationStr: [String] = []
 		leaveTipButton.layer.cornerRadius = 20
 		tipAmountOneLabel.textColor = Colors.primaryGreen
 		tipAmountTwoLabel.textColor = Colors.primaryGreen
 		tipAmountThreeLabel.textColor = Colors.primaryGreen
-		self.title = server?.name
+		
 //		workerProfileImage.image = worker?.image
-		locationAndDurationLabel.text = "\(locationStr.joined(separator: ", "))"
+//		locationAndDurationLabel.text = "\(locationStr.joined(separator: ", "))"
 //		if let workerObject = worker {
 //			taglineTextView.text = "\"\(workerObject.tagline)\""
 //			for location in workerObject.locations {
@@ -59,6 +64,15 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 //		leaveTipButton.layer.addSublayer(layerGradient)
 		
     }
+	
+	func updateViews() {
+		guard let server = server else { return }
+		guard isViewLoaded else { return }
+		self.title = server.name
+		taglineTextView.text = server.tagline
+		locationAndDurationLabel.text = String(server.location)
+		
+	}
     
 	@IBAction func leaveTipButtonTapped(_ sender: UIButton) {
 		triggerAlert()
