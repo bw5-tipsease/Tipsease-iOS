@@ -68,6 +68,12 @@ class DashboardViewController: UIViewController {
 		}
 	}
 
+	@IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
+		apiController.bearer = nil
+		apiController.persistence.logoutResetToken()
+		performSegue(withIdentifier: "LoginSegue", sender: self)
+	}
+	
 	
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -31,6 +31,11 @@ class PersistentService {
 		let token = try? PropertyListDecoder().decode(Bearer.self, from: data)
 		return token
 	}
+	
+	func logoutResetToken() {
+		defaults.set(nil, forKey: Keys.userToken)
+		defaults.synchronize()
+	}
 }
 
 

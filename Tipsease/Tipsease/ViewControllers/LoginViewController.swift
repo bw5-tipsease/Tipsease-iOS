@@ -35,63 +35,63 @@ class LoginViewController: UIViewController {
 		if sender.selectedSegmentIndex == 0 {
 			loginType = .register
 			loginButton.setTitle("Sign Up", for: .normal)
+			nameTextField.isHidden = false
 		} else {
 			loginType = .login
 			loginButton.setTitle("Sign In", for: .normal)
+			nameTextField.isHidden = true
 		}
 	}
 	
 	@IBAction func loginButtonTapped(_ sender: UIButton) {
+		switch loginType {
+		case .register:
+			signUpButtonTapped()
+		case .login:
+			signInButtonTapped()
+		}
+	}
+	
+	private func signUpButtonTapped() {
 		guard let apiController = apiController else { return }
-		if let name = nameTextField.text,
-			!name.isEmpty,
-			let email = emailTextField.text,
-			!email.isEmpty, let password = passwordTextField.text,
-			!password.isEmpty {
-			let user = User(name: name, email: email, password: password)
-			if loginType == .register {
-				apiController.register(user: user) { (error) in
-					if let error = error {
-						print("Error occurred during sign up: \(error)")
-					} else {
-						DispatchQueue.main.async {
-							let alertController = UIAlertController(title: "Sign up Successful", message: "Now please log in.", preferredStyle: .alert)
-							let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-							alertController.addAction(alertAction)
-							self.present(alertController, animated: true, completion:  {
-								self.loginType = .login
-								self.segControl.selectedSegmentIndex = 1
-								self.loginButton.setTitle("Sign In", for: .normal)
-							})
-						}
-					}
-				}
-			} else if loginType == .login {
-				apiController.login(user: user) { (error) in
-					if let error = error {
-						print("Error occurred during sign in: \(error)")
-					} else {
-						DispatchQueue.main.async {
-							guard apiController.bearer != nil else { return }
-							apiController.saveBearer()
-							self.dismiss(animated: true, completion: nil)
-						}
-					}
-				}
+		guard let name = nameTextField.text, !name.isEmpty else { return }
+		guard let email = emailTextField.text, !email.isEmpty else { return }
+		guard let password = passwordTextField.text, password.isEmpty else { return }
+		let user = User(name: name, email: email, password: password)
+		apiController.register(user: user) { (error) in
+			if let error = error {
+				print("Error occurred during sign up: \(error)")
 			} else {
-				print("No luck!")
+				DispatchQueue.main.async {
+					let alertController = UIAlertController(title: "Sign up successful", message: "Now please log in", preferredStyle: .alert)
+					let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+					alertController.addAction(alertAction)
+					self.present(alertController, animated: true, completion: {
+						self.loginType = .login
+						self.segControl.selectedSegmentIndex = 1
+						self.loginButton.setTitle("Sign In", for: .normal)
+					})
+				}
 			}
 		}
 	}
 	
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	private func signInButtonTapped() {
+		guard let apiController = apiController else { return }
+		guard let email = emailTextField.text, !email.isEmpty else { return }
+		guard let password = passwordTextField.text, !password.isEmpty else { return }
+		let user = User(name: nil, email: email, password: password)
+		apiController.login(user: user) { (error) in
+			if let error = error {
+				print("Error occurred during signing in: \(error)")
+			} else {
+				DispatchQueue.main.async {
+					guard apiController.bearer != nil else { return }
+					apiController.saveBearer()
+					self.dismiss(animated: true, completion: nil)
+				}
+			}
+		}
+	}
+	
 }
