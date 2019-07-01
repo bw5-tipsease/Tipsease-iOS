@@ -42,7 +42,7 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-		leaveTipButton.layer.cornerRadius = 20
+		
 		tipAmountOneLabel.textColor = Colors.primaryGreen
 		tipAmountTwoLabel.textColor = Colors.primaryGreen
 		tipAmountThreeLabel.textColor = Colors.primaryGreen
@@ -57,12 +57,12 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 //		}
 		
 		//TODO: - Gradient Button
-//		layerGradient.colors = [Colors.secondaryBlue.cgColor, Colors.deeperBlue.cgColor]
-//		layerGradient.startPoint = CGPoint(x: 0, y: 0.5)
-//		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
-//		layerGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-//		leaveTipButton.layer.addSublayer(layerGradient)
-		
+		layerGradient.colors = [Colors.secondaryBlue.cgColor, Colors.deeperBlue.cgColor]
+		layerGradient.startPoint = CGPoint(x: 0, y: 0.5)
+		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
+		layerGradient.frame = CGRect(x: 0, y: 0, width: leaveTipButton.bounds.width, height: leaveTipButton.bounds.height)
+		leaveTipButton.layer.addSublayer(layerGradient)
+		leaveTipButton.layer.cornerRadius = 20
     }
 	
 	func updateViews() {

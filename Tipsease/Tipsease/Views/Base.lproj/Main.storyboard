@@ -526,7 +526,7 @@
                                     <constraint firstAttribute="height" constant="240" id="5iS-bl-52K"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7b-Nk-sXl">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7b-Nk-sXl">
                                 <rect key="frame" x="120" y="309" width="174" height="40"/>
                                 <color key="backgroundColor" red="0.1996488273" green="0.62024915219999999" blue="0.97628837820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
