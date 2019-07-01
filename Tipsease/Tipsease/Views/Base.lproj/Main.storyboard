@@ -770,7 +770,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZs-QK-qoo">
-                                <rect key="frame" x="110" y="477" width="194" height="40"/>
+                                <rect key="frame" x="110" y="472" width="194" height="40"/>
                                 <color key="backgroundColor" red="0.1996488273" green="0.62024915219999999" blue="0.97628837820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1ph-n3-eyJ"/>
@@ -783,13 +783,13 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tipsease-logo" translatesAutoresizingMaskIntoConstraints="NO" id="I1B-lu-eSj">
-                                <rect key="frame" x="50" y="322" width="314" height="30"/>
+                                <rect key="frame" x="50" y="342" width="314" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0Iv-cG-r6T"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="aMM-7Z-eUO">
-                                <rect key="frame" x="50" y="147" width="314" height="155"/>
+                                <rect key="frame" x="50" y="167" width="314" height="155"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xg-T7-gdu">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="35"/>
@@ -823,10 +823,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="aZs-QK-qoo" firstAttribute="top" secondItem="I1B-lu-eSj" secondAttribute="bottom" constant="125" id="4Y5-2U-Nhn"/>
+                            <constraint firstItem="aZs-QK-qoo" firstAttribute="top" secondItem="I1B-lu-eSj" secondAttribute="bottom" constant="100" id="4Y5-2U-Nhn"/>
                             <constraint firstItem="aMM-7Z-eUO" firstAttribute="leading" secondItem="CxZ-Ca-mCO" secondAttribute="leading" constant="50" id="6A1-9w-CiA"/>
                             <constraint firstItem="CxZ-Ca-mCO" firstAttribute="trailing" secondItem="aZs-QK-qoo" secondAttribute="trailing" constant="110" id="7Z8-K9-4Hr"/>
-                            <constraint firstItem="aMM-7Z-eUO" firstAttribute="top" secondItem="v0k-b3-3zF" secondAttribute="bottom" constant="25" id="D2V-Gt-tdk"/>
+                            <constraint firstItem="aMM-7Z-eUO" firstAttribute="top" secondItem="v0k-b3-3zF" secondAttribute="bottom" constant="45" id="D2V-Gt-tdk"/>
                             <constraint firstItem="CxZ-Ca-mCO" firstAttribute="trailing" secondItem="I1B-lu-eSj" secondAttribute="trailing" constant="50" id="Jas-Rh-i75"/>
                             <constraint firstItem="CxZ-Ca-mCO" firstAttribute="trailing" secondItem="aMM-7Z-eUO" secondAttribute="trailing" constant="50" id="Nzp-hI-3aC"/>
                             <constraint firstItem="I1B-lu-eSj" firstAttribute="leading" secondItem="CxZ-Ca-mCO" secondAttribute="leading" constant="50" id="YjD-jX-gwk"/>

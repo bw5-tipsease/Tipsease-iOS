@@ -35,11 +35,15 @@ class LoginViewController: UIViewController {
 		if sender.selectedSegmentIndex == 0 {
 			loginType = .register
 			loginButton.setTitle("Sign Up", for: .normal)
-			nameTextField.isHidden = false
+			if nameTextField.isHidden == true {
+				animateView(view: nameTextField, toHidden: false)
+			}
 		} else {
 			loginType = .login
 			loginButton.setTitle("Sign In", for: .normal)
-			nameTextField.isHidden = true
+			if nameTextField.isHidden == false {
+				animateView(view: nameTextField, toHidden: true)
+			}
 		}
 	}
 	
@@ -92,6 +96,12 @@ class LoginViewController: UIViewController {
 				}
 			}
 		}
+	}
+	
+	private func animateView(view: UIView, toHidden isHidden: Bool) {
+		UIView.animate(withDuration: 0.2, delay: 0, options: .showHideTransitionViews, animations: {
+			view.isHidden = isHidden
+		}, completion: nil)
 	}
 	
 }
