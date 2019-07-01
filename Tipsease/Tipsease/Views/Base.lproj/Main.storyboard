@@ -431,7 +431,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="1cC-cY-ZWo">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WorkerCellDetail" rowHeight="70" id="1cC-cY-ZWo">
                                                 <rect key="frame" x="0.0" y="28" width="374" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1cC-cY-ZWo" id="VOs-JN-Qmv">
@@ -794,7 +794,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Xg-T7-gdu">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="8fv-ZW-gTr"/>
+                                            <constraint firstAttribute="height" priority="750" constant="35" id="sMV-lS-E8z"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -803,7 +803,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XWB-pK-JCY">
                                         <rect key="frame" x="0.0" y="60" width="314" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="Ciq-6V-v7I"/>
+                                            <constraint firstAttribute="height" constant="35" id="ElV-qF-h7h"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -812,7 +812,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wnm-3Q-mN9">
                                         <rect key="frame" x="0.0" y="120" width="314" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="ub3-wK-vjZ"/>
+                                            <constraint firstAttribute="height" constant="35" id="YcU-t0-WeM"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>

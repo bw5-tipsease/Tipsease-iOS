@@ -99,9 +99,8 @@ class LoginViewController: UIViewController {
 	}
 	
 	private func animateView(view: UIView, toHidden isHidden: Bool) {
-		UIView.animate(withDuration: 0.2, delay: 0, options: .showHideTransitionViews, animations: {
+		UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 10.0, options:[], animations: {
 			view.isHidden = isHidden
 		}, completion: nil)
 	}
-	
 }
