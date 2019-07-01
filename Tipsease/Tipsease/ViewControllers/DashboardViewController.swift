@@ -24,14 +24,11 @@ class DashboardViewController: UIViewController {
 			workerTableView.reloadData()
 		}
 	}
-	
-	
+
 	let apiController = APIController()
 	var amountTypedString = ""
 	
-	
 	//MARK: - Lifecycle
-	
 	override func viewWillAppear(_ animated: Bool) {
 		apiController.fetchAllServers { (result) in
 //			print(result)
@@ -71,9 +68,14 @@ class DashboardViewController: UIViewController {
 		}
 	}
 
+	@IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
+		apiController.bearer = nil
+		apiController.persistence.logoutResetToken()
+		performSegue(withIdentifier: "LoginSegue", sender: self)
+	}
+	
 	
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "LoginSegue" {
 			if let loginVC = segue.destination as? LoginViewController {
@@ -90,13 +92,11 @@ class DashboardViewController: UIViewController {
 }
 
 // MARK: - Extensions
-
 extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 		return true
 	}
-	
 	
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 		let tipAction = UIContextualAction(style: .normal, title: "Tip") { (ac: UIContextualAction, UIView, success) in
@@ -128,7 +128,6 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 		return UISwipeActionsConfiguration(actions: [tipAction])
 	}
 	
-	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if tableView == workerTableView {
 			return apiController.servers.count
@@ -158,7 +157,6 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 		}
 	} 
 }
-
 
 extension DashboardViewController: UITextFieldDelegate {
 	func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
