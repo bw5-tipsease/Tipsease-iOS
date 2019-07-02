@@ -56,8 +56,7 @@ class DashboardViewController: UIViewController {
 		layerGradient.startPoint = CGPoint(x: 0, y: 0.5)
 		layerGradient.endPoint = CGPoint(x: 1, y: 0.5)
 		layerGradient.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-		tabBarController?.tabBar.layer.addSublayer(layerGradient)
-		
+		tabBarController?.tabBar.layer.insertSublayer(layerGradient, at: 0)
     }
 	
 	override func viewDidAppear(_ animated: Bool) {
@@ -69,7 +68,6 @@ class DashboardViewController: UIViewController {
 	}
 
 	@IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
-		apiController.bearer = nil
 		apiController.persistence.logoutResetToken()
 		performSegue(withIdentifier: "LoginSegue", sender: self)
 	}
@@ -99,7 +97,7 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-		let tipAction = UIContextualAction(style: .normal, title: "Tip") { (ac: UIContextualAction, UIView, success) in
+		let tipAction = UIContextualAction(style: .normal, title: nil) { (ac: UIContextualAction, UIView, success) in
 			self.amountTypedString = ""
 			let tipAlertController = UIAlertController(title: "How much would you like to tip \(self.apiController.servers[indexPath.row].name)?", message: nil, preferredStyle: .alert)
 			tipAlertController.addTextField(configurationHandler: { (tipTextField) in
@@ -143,14 +141,15 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
 //			cell.imagePlaceholder.image = apiController.servers[indexPath.row].image
 			cell.workerNameLabel.text = apiController.servers[indexPath.row].name
-			cell.ratingLabel.text = "Rating: \(apiController.servers[indexPath.row].rating)"
+			cell.ratingLabel.text = "Rating: \(apiController.servers[indexPath.row].rating) out of 5"
+			cell.positionLabel.text = apiController.servers[indexPath.row].jobTitle
 			cell.accessoryType = .disclosureIndicator
 			return cell
 		} else if tableView == locationTableView {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "LocationCell", for: indexPath) as? LocationTableViewCell else { return UITableViewCell() }
 //			cell.locationImage.image = apiController[indexPath.row].image
-			cell.locationNameLabel.text = apiController.servers[indexPath.row].name
-//			cell.addressLabel.text = apiController.locations[indexPath.row].address //LOCATION GOES HERE
+			cell.locationNameLabel.text = String(apiController.servers[indexPath.row].location)
+			
 			return cell
 		} else {
 			return UITableViewCell()
