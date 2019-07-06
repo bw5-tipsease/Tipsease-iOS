@@ -12,7 +12,7 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 
 //	var workerController: WorkerController?
 	var apiController: APIController?
-	
+	var workerImage: UIImage?
 	var server: Worker? {
 		didSet {
 			loadViewIfNeeded()
@@ -47,7 +47,7 @@ class WorkerDetailViewController: UIViewController, UITextFieldDelegate {
 		tipAmountTwoLabel.textColor = Colors.primaryGreen
 		tipAmountThreeLabel.textColor = Colors.primaryGreen
 		
-//		workerProfileImage.image = worker?.image
+		
 //		locationAndDurationLabel.text = "\(locationStr.joined(separator: ", "))"
 //		if let workerObject = worker {
 //			taglineTextView.text = "\"\(workerObject.tagline)\""

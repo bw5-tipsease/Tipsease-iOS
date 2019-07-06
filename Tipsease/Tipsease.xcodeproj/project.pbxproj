@@ -39,6 +39,7 @@
 		37F14D7422C42F7F0026BE96 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F14D7322C42F7F0026BE96 /* Location.swift */; };
 		37F14D7622C533540026BE96 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F14D7522C533540026BE96 /* LocationTableViewCell.swift */; };
 		37F14D7822C533BB0026BE96 /* LocationTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F14D7722C533BB0026BE96 /* LocationTableView.swift */; };
+		37FDEACE22CD6C6900C4BCA9 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FDEACD22CD6C6900C4BCA9 /* CustomTabBar.swift */; };
 		A2116F1A22C3E1D800A9F0DC /* AccountPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2116F1822C3E1D800A9F0DC /* AccountPage.storyboard */; };
 		A2116F1C22C43D8900A9F0DC /* WorkerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2116F1B22C43D8900A9F0DC /* WorkerController.swift */; };
 /* End PBXBuildFile section */
@@ -78,6 +79,7 @@
 		37F14D7322C42F7F0026BE96 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		37F14D7522C533540026BE96 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
 		37F14D7722C533BB0026BE96 /* LocationTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableView.swift; sourceTree = "<group>"; };
+		37FDEACD22CD6C6900C4BCA9 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		A2116F1922C3E1D800A9F0DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Tipsease/Views/Base.lproj/AccountPage.storyboard; sourceTree = "<group>"; };
 		A2116F1B22C43D8900A9F0DC /* WorkerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +159,7 @@
 		377E2B0222C27A8000D85371 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				37FDEACD22CD6C6900C4BCA9 /* CustomTabBar.swift */,
 				377E2B0022C27A7800D85371 /* UIMaterial.swift */,
 			);
 			path = Resources;
@@ -190,8 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				377E2ACB22C13C0600D85371 /* Main.storyboard */,
-				377E2AD022C13C0700D85371 /* LaunchScreen.storyboard */,
 				A2116F1822C3E1D800A9F0DC /* AccountPage.storyboard */,
+				377E2AD022C13C0700D85371 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			files = (
 				3711602622C7002100DA5E9C /* PersistentService.swift in Sources */,
 				378F789922C3DC7000151104 /* Transaction.swift in Sources */,
+				37FDEACE22CD6C6900C4BCA9 /* CustomTabBar.swift in Sources */,
 				378F789722C3DC5000151104 /* Bearer.swift in Sources */,
 				37F14D7622C533540026BE96 /* LocationTableViewCell.swift in Sources */,
 				377E2B0722C2812900D85371 /* LoginViewController.swift in Sources */,
