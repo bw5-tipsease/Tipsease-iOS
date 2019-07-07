@@ -325,7 +325,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hhc-QF-VPk"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="dP1-wp-lj3"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="Home" id="dP1-wp-lj3"/>
                     <navigationItem key="navigationItem" title="Tipsease" largeTitleDisplayMode="always" id="Qzn-bJ-OA1">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="1GT-0B-ybf">
                             <connections>
@@ -733,7 +733,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="wT9-fz-OCk" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="Home" id="TCe-tE-Ag0">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TCe-tE-Ag0">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -742,8 +742,8 @@
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="fEq-hL-Zec" kind="relationship" relationship="viewControllers" id="JAj-PG-NM2"/>
-                        <segue destination="CTN-hx-Lu8" kind="show" identifier="SearchControllerSegue" id="OYe-0m-WLM"/>
+                        <segue destination="fEq-hL-Zec" kind="relationship" relationship="viewControllers" id="mGZ-Gf-BjF"/>
+                        <segue destination="CTN-hx-Lu8" kind="relationship" relationship="viewControllers" id="dfa-Hi-NfW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PCg-AS-13r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -854,7 +854,7 @@
         <scene sceneID="Pn8-Dp-pu2">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fEq-hL-Zec" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="OOQ-Hg-acJ"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home" id="OOQ-Hg-acJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5js-DQ-9vN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -876,7 +876,11 @@
         <!--AccountPage-->
         <scene sceneID="yUc-my-yum">
             <objects>
-                <viewControllerPlaceholder storyboardName="AccountPage" id="CTN-hx-Lu8" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AccountPage" id="CTN-hx-Lu8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" image="User-Account" id="jVt-dY-nur">
+                        <color key="badgeColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIR-P6-EIR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1041" y="889"/>
@@ -884,6 +888,7 @@
     </scenes>
     <resources>
         <image name="Home" width="23" height="25"/>
+        <image name="User-Account" width="30" height="30"/>
         <image name="tipsease-logo" width="1324" height="327"/>
     </resources>
     <inferredMetricsTieBreakers>

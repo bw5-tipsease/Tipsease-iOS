@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum HTTPMethod: String {
     case get = "GET"
@@ -28,7 +29,6 @@ enum NetworkError: Error {
 class APIController {
 	
 	//MARK: - Properties
-	
 	var bearer: Bearer?
 	let persistence = PersistentService()
 	private let baseURL = URL(string: "https://tipsease-be.herokuapp.com/api")
@@ -42,7 +42,6 @@ class APIController {
     
 
 	// MARK: - Register & Sign Encode & Decode functions
-	
     func register(user: User, completion: @escaping (Error?) -> ()) {
         guard let baseURL = baseURL else { return }
         let registerURL = baseURL.appendingPathComponent("auth/register")
@@ -120,7 +119,6 @@ class APIController {
     }
 
 	// MARK: - Fetch Data Function
-	
     func fetchAllServers(completion: @escaping (Result<[Worker], NetworkError>) -> ()) {
         guard let bearer = bearer else {
             completion(.failure(.noAuth))
@@ -160,8 +158,32 @@ class APIController {
     }
 	
 	// MARK: - Fetch Image URLs function
+	func fetchImages(at urlString: String, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
+		let imageUrl = URL(string: urlString)!
+		
+		var request = URLRequest(url: imageUrl)
+		request.httpMethod = HTTPMethod.get.rawValue
+		
+		URLSession.shared.dataTask(with: request) { data, _, error in
+			if let _ = error {
+				completion(.failure(.otherError))
+			}
+			
+			guard let data = data else {
+				completion(.failure(.badData))
+				return
+			}
+			
+			guard let image = UIImage(data: data) else {
+				completion(.failure(.badData))
+				return
+			}
+			completion(.success(image))
+		}.resume()
+	}
 	
 	
+	// MARK: - Persistence Functions
 	func saveBearer() {
 		guard let bearerToken = bearer else { return }
 		persistence.saveUserToken(token: bearerToken)

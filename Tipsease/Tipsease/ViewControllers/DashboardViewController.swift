@@ -139,10 +139,21 @@ extension DashboardViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		if tableView == workerTableView {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkerCell", for: indexPath) as? WorkerTableViewCell else { return UITableViewCell() }
-//			cell.imagePlaceholder.image = apiController.servers[indexPath.row].image
-			cell.workerNameLabel.text = apiController.servers[indexPath.row].name
-			cell.ratingLabel.text = "Rating: \(apiController.servers[indexPath.row].rating) out of 5"
-			cell.positionLabel.text = apiController.servers[indexPath.row].jobTitle
+			let server = apiController.servers[indexPath.row]
+			cell.workerNameLabel.text = server.name
+			cell.ratingLabel.text = "Rating: \(server.rating) out of 5"
+			cell.positionLabel.text = server.jobTitle
+			apiController.fetchImages(at: server.imageUrl) { (result) in
+				DispatchQueue.main.async {
+					do {
+						let image = try result.get()
+						cell.imagePlaceholder.image = image
+					} catch {
+						NSLog("Could not get image: \(error)")
+					}
+				}
+			}
+
 			cell.accessoryType = .disclosureIndicator
 			return cell
 		} else if tableView == locationTableView {
